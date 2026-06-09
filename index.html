@@ -6,46 +6,229 @@
   <title>Loop Demo — Agent Dashboard</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg: #0a0a0f; --surface: #111118; --surface2: #1a1a24;
-      --border: #2a2a38; --accent: #6c63ff; --accent2: #00ff88;
-      --text: #e8e8f0; --muted: #666680;
-      --mono: 'JetBrains Mono', monospace; --sans: 'Inter', sans-serif;
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface2: #1a1a24;
+      --border: #2a2a38;
+      --accent: #6c63ff;
+      --accent2: #00ff88;
+      --text: #e8e8f0;
+      --muted: #666680;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', sans-serif;
     }
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); min-height: 100vh; }
-    .header { border-bottom: 1px solid var(--border); padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
-    .logo span { color: var(--accent); }
-    .status-pill { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #00ff88; border: 1px solid #00ff8844; background: #00ff8811; padding: 6px 14px; border-radius: 100px; }
-    .main { max-width: 900px; margin: 0 auto; padding: 48px 40px; }
-    .hero { margin-bottom: 48px; }
-    .iter-badge { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
-    .hero-number { font-family: var(--mono); font-size: clamp(64px, 12vw, 120px); font-weight: 700; line-height: 1; color: var(--text); letter-spacing: -0.03em; margin-bottom: 8px; }
-    .hero-number span { color: var(--accent); }
-    .hero-sub { font-size: 14px; color: var(--muted); font-weight: 300; }
-    .section-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-    .progress-section { margin-bottom: 48px; }
-    .progress-bar-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 2px; height: 6px; margin-bottom: 24px; overflow: hidden; }
-    .progress-bar-fill { height: 100%; width: 0.0%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; }
-    .tasks { display: flex; flex-direction: column; gap: 8px; }
-    .task { font-size: 13px; padding: 12px 16px; border-radius: 4px; display: flex; align-items: center; gap: 12px; border: 1px solid var(--border); }
-    .task.done { background: var(--surface); color: var(--text); }
-    .task.pending { background: transparent; color: var(--muted); border-style: dashed; }
-    .check { font-family: var(--mono); font-size: 12px; color: var(--accent2); width: 16px; flex-shrink: 0; }
-    .task.pending .check { color: var(--border); }
-    .history-section { margin-bottom: 48px; }
-    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 4px; }
-    table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 12px; }
-    th { text-align: left; padding: 10px 16px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); background: var(--surface); font-weight: 600; }
-    td { padding: 12px 16px; vertical-align: top; color: var(--text); }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .status-pill {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #00ff88;
+      border: 1px solid #00ff8844;
+      background: #00ff8811;
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    /* Main layout */
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 48px;
+    }
+
+    .iter-badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero-number {
+      font-family: var(--mono);
+      font-size: clamp(64px, 12vw, 120px);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .hero-number span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* Progress */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .progress-section {
+      margin-bottom: 48px;
+    }
+
+    .progress-bar-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      height: 6px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 20.0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width 0.4s ease;
+      border-radius: 2px;
+    }
+
+    .tasks {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .task {
+      font-size: 13px;
+      padding: 12px 16px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .task.done {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .task.pending {
+      background: transparent;
+      color: var(--muted);
+      border-style: dashed;
+    }
+
+    .check {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent2);
+      width: 16px;
+      flex-shrink: 0;
+    }
+
+    .task.pending .check {
+      color: var(--border);
+    }
+
+    /* History table */
+    .history-section {
+      margin-bottom: 48px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    th {
+      text-align: left;
+      padding: 10px 16px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 12px 16px;
+      vertical-align: top;
+      color: var(--text);
+    }
+
     .row-even td { background: var(--surface); }
     .row-odd td { background: var(--bg); }
+
     .td-iter { color: var(--accent); width: 60px; }
     .td-time { color: var(--muted); white-space: nowrap; width: 160px; }
     .td-item { font-weight: 600; }
     .td-reason { color: var(--muted); font-family: var(--sans); font-size: 12px; }
-    .footer { border-top: 1px solid var(--border); padding: 20px 40px; font-family: var(--mono); font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 40px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
     @media (max-width: 600px) {
       .header, .main, .footer { padding-left: 20px; padding-right: 20px; }
       .hero-number { font-size: 72px; }
@@ -54,45 +237,61 @@
   </style>
 </head>
 <body>
+
   <header class="header">
     <div class="logo"><span>/</span>loop-demo</div>
     <div class="status-pill">● RODANDO</div>
   </header>
+
   <main class="main">
+
     <section class="hero">
       <div class="iter-badge">iteração atual</div>
-      <div class="hero-number">0<span>.</span></div>
-      <div class="hero-sub">O agente tomou 0 decisões até agora. Você não promitou nenhuma delas.</div>
+      <div class="hero-number">1<span>.</span></div>
+      <div class="hero-sub">O agente tomou 1 decisões até agora. Você não promitou nenhuma delas.</div>
     </section>
+
     <section class="progress-section">
-      <div class="section-label">progresso — 0 de 5 tarefas</div>
-      <div class="progress-bar-wrap"><div class="progress-bar-fill"></div></div>
-      <div class="tasks"><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
-<div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
-<div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
-<div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
-<div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
-</div>
+      <div class="section-label">progresso — 1 de 5 tarefas</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill"></div>
+      </div>
+      <div class="tasks">
+        <div class="task done"><span class="check">✓</span>Configurei ESLint e Prettier no projeto</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
+      </div>
     </section>
+
     <section class="history-section">
       <div class="section-label">histórico de decisões</div>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>iter</th><th>timestamp</th><th>tarefa concluída</th><th>raciocínio</th>
+              <th>iter</th>
+              <th>timestamp</th>
+              <th>tarefa concluída</th>
+              <th>raciocínio</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td colspan="4" style="color:var(--muted);text-align:center;padding:32px;font-family:var(--sans)">Nenhuma iteração ainda. O loop rodará em breve.</td></tr>
+            
+        <tr class="row-even">
+          <td class="td-iter">#1</td>
+          <td class="td-time">2026-06-09 12:19 UTC</td>
+          <td class="td-item">Configurei ESLint e Prettier no projeto</td>
+          <td class="td-reason">Padronização de código é fundamental antes de iniciar o desenvolvimento.</td>
+        </tr>
           </tbody>
         </table>
       </div>
     </section>
+
   </main>
+
   <footer class="footer">
     <span>github.com/loop-demo</span>
     <span>atualizado via github actions · cron 30min</span>
   </footer>
+
 </body>
 </html>
