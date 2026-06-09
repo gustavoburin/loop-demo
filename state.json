@@ -1,10 +1,11 @@
 {
-  "iteration": 3,
+  "iteration": 4,
   "status": "RUNNING",
   "items": [
     "Configurei ESLint e Prettier no projeto",
     "Adicionei testes unitários para o serviço de login",
-    "Implementei cache Redis para endpoints de consulta"
+    "Implementei cache Redis para endpoints de consulta",
+    "Configurei Swagger/OpenAPI para documentação da API"
   ],
   "history": [
     {
@@ -27,6 +28,13 @@
       "item": "Implementei cache Redis para endpoints de consulta",
       "reasoning": "Com autenticação e qualidade de código estabelecidos, otimizar performance é o próximo passo lógico para escalar a aplicação.",
       "decision": "Implementar cache Redis para otimizar performance das requisições frequentes"
+    },
+    {
+      "iteration": 4,
+      "timestamp": "2026-06-09 19:54 UTC",
+      "item": "Configurei Swagger/OpenAPI para documentação da API",
+      "reasoning": "Com os serviços principais funcionando e cache implementado, documentar a API facilita integração e onboarding de novos desenvolvedores.",
+      "decision": "Implementar documentação automatizada da API REST"
     }
   ]
 }

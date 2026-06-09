@@ -129,7 +129,7 @@
 
     .progress-bar-fill {
       height: 100%;
-      width: 60.0%;
+      width: 80.0%;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
       transition: width 0.4s ease;
       border-radius: 2px;
@@ -247,17 +247,17 @@
 
     <section class="hero">
       <div class="iter-badge">iteração atual</div>
-      <div class="hero-number">3<span>.</span></div>
-      <div class="hero-sub">O agente tomou 3 decisões até agora. Você não promitou nenhuma delas.</div>
+      <div class="hero-number">4<span>.</span></div>
+      <div class="hero-sub">O agente tomou 4 decisões até agora. Você não promitou nenhuma delas.</div>
     </section>
 
     <section class="progress-section">
-      <div class="section-label">progresso — 3 de 5 tarefas</div>
+      <div class="section-label">progresso — 4 de 5 tarefas</div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill"></div>
       </div>
       <div class="tasks">
-        <div class="task done"><span class="check">✓</span>Configurei ESLint e Prettier no projeto</div><div class="task done"><span class="check">✓</span>Adicionei testes unitários para o serviço de login</div><div class="task done"><span class="check">✓</span>Implementei cache Redis para endpoints de consulta</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
+        <div class="task done"><span class="check">✓</span>Configurei ESLint e Prettier no projeto</div><div class="task done"><span class="check">✓</span>Adicionei testes unitários para o serviço de login</div><div class="task done"><span class="check">✓</span>Implementei cache Redis para endpoints de consulta</div><div class="task done"><span class="check">✓</span>Configurei Swagger/OpenAPI para documentação da API</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
       </div>
     </section>
 
@@ -276,18 +276,24 @@
           <tbody>
             
         <tr class="row-even">
+          <td class="td-iter">#4</td>
+          <td class="td-time">2026-06-09 19:54 UTC</td>
+          <td class="td-item">Configurei Swagger/OpenAPI para documentação da API</td>
+          <td class="td-reason">Com os serviços principais funcionando e cache implementado, documentar a API facilita integração e onboarding de novos desenvolvedores.</td>
+        </tr>
+        <tr class="row-odd">
           <td class="td-iter">#3</td>
           <td class="td-time">2026-06-09 17:51 UTC</td>
           <td class="td-item">Implementei cache Redis para endpoints de consulta</td>
           <td class="td-reason">Com autenticação e qualidade de código estabelecidos, otimizar performance é o próximo passo lógico para escalar a aplicação.</td>
         </tr>
-        <tr class="row-odd">
+        <tr class="row-even">
           <td class="td-iter">#2</td>
           <td class="td-time">2026-06-09 15:32 UTC</td>
           <td class="td-item">Adicionei testes unitários para o serviço de login</td>
           <td class="td-reason">Garantir cobertura de testes no fluxo crítico de autenticação antes de novas features.</td>
         </tr>
-        <tr class="row-even">
+        <tr class="row-odd">
           <td class="td-iter">#1</td>
           <td class="td-time">2026-06-09 12:19 UTC</td>
           <td class="td-item">Configurei ESLint e Prettier no projeto</td>
