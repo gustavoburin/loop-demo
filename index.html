@@ -56,9 +56,9 @@
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.08em;
-      color: #00ff88;
-      border: 1px solid #00ff8844;
-      background: #00ff8811;
+      color: #ff6b35;
+      border: 1px solid #ff6b3544;
+      background: #ff6b3511;
       padding: 6px 14px;
       border-radius: 100px;
     }
@@ -129,7 +129,7 @@
 
     .progress-bar-fill {
       height: 100%;
-      width: 80.0%;
+      width: 100.0%;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
       transition: width 0.4s ease;
       border-radius: 2px;
@@ -240,24 +240,24 @@
 
   <header class="header">
     <div class="logo"><span>/</span>loop-demo</div>
-    <div class="status-pill">● RODANDO</div>
+    <div class="status-pill">✓ CONCLUÍDO</div>
   </header>
 
   <main class="main">
 
     <section class="hero">
       <div class="iter-badge">iteração atual</div>
-      <div class="hero-number">4<span>.</span></div>
-      <div class="hero-sub">O agente tomou 4 decisões até agora. Você não promitou nenhuma delas.</div>
+      <div class="hero-number">5<span>.</span></div>
+      <div class="hero-sub">O agente tomou 5 decisões até agora. Você não promitou nenhuma delas.</div>
     </section>
 
     <section class="progress-section">
-      <div class="section-label">progresso — 4 de 5 tarefas</div>
+      <div class="section-label">progresso — 5 de 5 tarefas</div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill"></div>
       </div>
       <div class="tasks">
-        <div class="task done"><span class="check">✓</span>Configurei ESLint e Prettier no projeto</div><div class="task done"><span class="check">✓</span>Adicionei testes unitários para o serviço de login</div><div class="task done"><span class="check">✓</span>Implementei cache Redis para endpoints de consulta</div><div class="task done"><span class="check">✓</span>Configurei Swagger/OpenAPI para documentação da API</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
+        <div class="task done"><span class="check">✓</span>Configurei ESLint e Prettier no projeto</div><div class="task done"><span class="check">✓</span>Adicionei testes unitários para o serviço de login</div><div class="task done"><span class="check">✓</span>Implementei cache Redis para endpoints de consulta</div><div class="task done"><span class="check">✓</span>Configurei Swagger/OpenAPI para documentação da API</div><div class="task done"><span class="check">✓</span>Integrei Winston com logs estruturados em JSON para produção</div>
       </div>
     </section>
 
@@ -276,24 +276,30 @@
           <tbody>
             
         <tr class="row-even">
+          <td class="td-iter">#5</td>
+          <td class="td-time">2026-06-09 21:28 UTC</td>
+          <td class="td-item">Integrei Winston com logs estruturados em JSON para produção</td>
+          <td class="td-reason">Com cache e API documentada, logging robusto é essencial para debugging e observabilidade do sistema.</td>
+        </tr>
+        <tr class="row-odd">
           <td class="td-iter">#4</td>
           <td class="td-time">2026-06-09 19:54 UTC</td>
           <td class="td-item">Configurei Swagger/OpenAPI para documentação da API</td>
           <td class="td-reason">Com os serviços principais funcionando e cache implementado, documentar a API facilita integração e onboarding de novos desenvolvedores.</td>
         </tr>
-        <tr class="row-odd">
+        <tr class="row-even">
           <td class="td-iter">#3</td>
           <td class="td-time">2026-06-09 17:51 UTC</td>
           <td class="td-item">Implementei cache Redis para endpoints de consulta</td>
           <td class="td-reason">Com autenticação e qualidade de código estabelecidos, otimizar performance é o próximo passo lógico para escalar a aplicação.</td>
         </tr>
-        <tr class="row-even">
+        <tr class="row-odd">
           <td class="td-iter">#2</td>
           <td class="td-time">2026-06-09 15:32 UTC</td>
           <td class="td-item">Adicionei testes unitários para o serviço de login</td>
           <td class="td-reason">Garantir cobertura de testes no fluxo crítico de autenticação antes de novas features.</td>
         </tr>
-        <tr class="row-odd">
+        <tr class="row-even">
           <td class="td-iter">#1</td>
           <td class="td-time">2026-06-09 12:19 UTC</td>
           <td class="td-item">Configurei ESLint e Prettier no projeto</td>
