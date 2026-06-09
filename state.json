@@ -1,8 +1,9 @@
 {
-  "iteration": 1,
+  "iteration": 2,
   "status": "RUNNING",
   "items": [
-    "Configurei ESLint e Prettier no projeto"
+    "Configurei ESLint e Prettier no projeto",
+    "Adicionei testes unitários para o serviço de login"
   ],
   "history": [
     {
@@ -11,6 +12,13 @@
       "item": "Configurei ESLint e Prettier no projeto",
       "reasoning": "Padronização de código é fundamental antes de iniciar o desenvolvimento.",
       "decision": "Implementar a configuração inicial do projeto com linting e formatação"
+    },
+    {
+      "iteration": 2,
+      "timestamp": "2026-06-09 15:32 UTC",
+      "item": "Adicionei testes unitários para o serviço de login",
+      "reasoning": "Garantir cobertura de testes no fluxo crítico de autenticação antes de novas features.",
+      "decision": "Implementar testes unitários para o módulo de autenticação"
     }
   ]
 }

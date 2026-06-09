@@ -129,7 +129,7 @@
 
     .progress-bar-fill {
       height: 100%;
-      width: 20.0%;
+      width: 40.0%;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
       transition: width 0.4s ease;
       border-radius: 2px;
@@ -247,17 +247,17 @@
 
     <section class="hero">
       <div class="iter-badge">iteração atual</div>
-      <div class="hero-number">1<span>.</span></div>
-      <div class="hero-sub">O agente tomou 1 decisões até agora. Você não promitou nenhuma delas.</div>
+      <div class="hero-number">2<span>.</span></div>
+      <div class="hero-sub">O agente tomou 2 decisões até agora. Você não promitou nenhuma delas.</div>
     </section>
 
     <section class="progress-section">
-      <div class="section-label">progresso — 1 de 5 tarefas</div>
+      <div class="section-label">progresso — 2 de 5 tarefas</div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill"></div>
       </div>
       <div class="tasks">
-        <div class="task done"><span class="check">✓</span>Configurei ESLint e Prettier no projeto</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
+        <div class="task done"><span class="check">✓</span>Configurei ESLint e Prettier no projeto</div><div class="task done"><span class="check">✓</span>Adicionei testes unitários para o serviço de login</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div><div class="task pending"><span class="check">○</span>aguardando próxima iteração...</div>
       </div>
     </section>
 
@@ -276,6 +276,12 @@
           <tbody>
             
         <tr class="row-even">
+          <td class="td-iter">#2</td>
+          <td class="td-time">2026-06-09 15:32 UTC</td>
+          <td class="td-item">Adicionei testes unitários para o serviço de login</td>
+          <td class="td-reason">Garantir cobertura de testes no fluxo crítico de autenticação antes de novas features.</td>
+        </tr>
+        <tr class="row-odd">
           <td class="td-iter">#1</td>
           <td class="td-time">2026-06-09 12:19 UTC</td>
           <td class="td-item">Configurei ESLint e Prettier no projeto</td>
